@@ -30,11 +30,6 @@ Funding for development and maintenance of the FMG-toolbox has been provided by 
 
 ***
 
-## Latest Updates
-Check out the [NEWS](NEWS.md) for details on the latest updates.  
-
-***  
-
 ## Authors
 * [Christopher Hawes](mailto:Christopher.C.Hawes@usace.army.mil), Geographer, Rock Island District, U.S. Army Corps of Engineers
 * [Alden Ross](mailto:amanda.l.ross@usace.army.mil), Geographer, Rock Island District, U.S. Army Corps of Engineers
@@ -44,7 +39,3 @@ Check out the [NEWS](NEWS.md) for details on the latest updates.
 
 ## Bug Reports
 If you find any bugs while using the FMG toolbox toolbox, please open an [issue](https://github.com/ForestManagementGeodatabase/FMG-toolbox/issues) in this repository. 
-
-***  
-
-## Read the Report
