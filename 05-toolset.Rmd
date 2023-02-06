@@ -1,4 +1,18 @@
 # Toolset
 
 ## Python (Analysis)
+
+```{r py tools table,echo=FALSE}
+
+
+library(knitr)
+Py_Script_Tools_df <- read.csv("data/Py_Script_Tools.csv", check.names=FALSE)
+kable(Py_Script_Tools_df)
+```
+
+
+
+
+
+
 ## R Package (Reporting)

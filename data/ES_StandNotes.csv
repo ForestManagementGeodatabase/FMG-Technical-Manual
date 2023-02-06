@@ -1,0 +1,7 @@
+﻿Field Name,Field Description,Field Type
+OBJECTID,ArcGIS Database Key (auto-generated),Object ID
+SID,Unique stand identifier,Text
+PID,Unique plot identifier,Text
+NOTE_BY,Note author,Text
+NOTE_DATE,Date of note,Text
+NOTE,Note field,Text

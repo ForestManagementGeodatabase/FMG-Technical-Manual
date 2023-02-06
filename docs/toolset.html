@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual</title>
 <meta name="author" content="US Army Corps of Engineers">
-<meta name="description" content="5.1 Python (Analysis)   5.2 R Package (Reporting)">
+<meta name="description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Python (Analysis)   5.2 R Package (Reporting)">
+<meta property="og:description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual">
-<meta name="twitter:description" content="5.1 Python (Analysis)   5.2 R Package (Reporting)">
+<meta name="twitter:description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -42,15 +42,7 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">Overview</a></li>
-<li><a class="" href="intro.html"><span class="header-section-number">1</span> Intro</a></li>
-<li><a class="" href="tools-reference.html"><span class="header-section-number">2</span> Tools Reference</a></li>
-<li><a class="" href="feature-class-reference.html"><span class="header-section-number">3</span> Feature Class Reference</a></li>
-<li><a class="" href="metrics-reference.html"><span class="header-section-number">4</span> Metrics Reference</a></li>
-<li><a class="active" href="toolset.html"><span class="header-section-number">5</span> Toolset</a></li>
-<li><a class="" href="field-data-collection.html"><span class="header-section-number">6</span> Field Data Collection</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 5</span> Toolset</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
@@ -65,6 +57,54 @@
 <h2>
 <span class="header-section-number">5.1</span> Python (Analysis)<a class="anchor" aria-label="anchor" href="#python-analysis"><i class="fas fa-link"></i></a>
 </h2>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="16%">
+<col width="83%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Tool Name</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">FMG Health Summary</td>
+<td align="left">Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional)</td>
+</tr>
+<tr class="even">
+<td align="left">FMG Note Appender</td>
+<td align="left">Aggregates the notes of ES_AgePlot, ES_FixedPlot, &amp; ES_PrismPlot into one table</td>
+</tr>
+<tr class="odd">
+<td align="left">FMG Plot Summary (Age &amp; Fixed)</td>
+<td align="left">Generates mean overstory closure, mean overstory height, mean understory cover, mean understory height, &amp; mean tree age</td>
+</tr>
+<tr class="even">
+<td align="left">FMG Stand Species Summary</td>
+<td align="left">Generates average basal area, average trees per acre, count, plot frequency, &amp; quadratic mean DBH for each species</td>
+</tr>
+<tr class="odd">
+<td align="left">FMG Species Importance Values</td>
+<td align="left">Generates the importance values of species on a 300-scale (relative TPA, relative BA, &amp; relative frequency)</td>
+</tr>
+<tr class="even">
+<td align="left">FMG Spp Importance Values (Plot)</td>
+<td align="left">Generates the importance values of species on a 200-scale (relative TPA &amp; relative BA)</td>
+</tr>
+<tr class="odd">
+<td align="left">FMG Stand Summary</td>
+<td align="left">Generates average basal area, average trees per acre (total, size classes, mast types), tree count, plot count, note count, species richness &amp; quadratic mean DBH</td>
+</tr>
+<tr class="even">
+<td align="left">FMG Stand ID Assign</td>
+<td align="left">Updates the SID field when stand lines are moved</td>
+</tr>
+<tr class="odd">
+<td align="left">FMG Forest Community</td>
+<td align="left">Analyzes ES_PrismPlot to generate plot and stand level forest community types</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div id="r-package-reporting" class="section level2" number="5.2">
 <h2>
@@ -74,20 +114,15 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="metrics-reference.html"><span class="header-section-number">4</span> Metrics Reference</a></div>
-<div class="next"><a href="field-data-collection.html"><span class="header-section-number">6</span> Field Data Collection</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#toolset"><span class="header-section-number">5</span> Toolset</a></li>
-<li><a class="nav-link" href="#python-analysis"><span class="header-section-number">5.1</span> Python (Analysis)</a></li>
-<li><a class="nav-link" href="#r-package-reporting"><span class="header-section-number">5.2</span> R Package (Reporting)</a></li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/05-toolset.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/05-toolset.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>
@@ -99,7 +134,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Forestry Management Geodatabase Technical Manual</strong>" was written by US Army Corps of Engineers. It was last built on 2023-02-01.</p>
+    <p>"<strong>Forestry Management Geodatabase Technical Manual</strong>" was written by US Army Corps of Engineers. It was last built on 2023-02-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

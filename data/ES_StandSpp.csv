@@ -1,0 +1,8 @@
+﻿Field Name,Field Description,Field Type
+OBJECTID,ArcGIS Database Key (auto-generated),Object ID
+SID,Unique stand identifier,Text
+TR_SP,Tree species,Text
+AV_BA,Av. BA/Acre,Double
+AV_TPA,Av. TPA,Double
+NUM_TR,# of count trees,Text
+IMP_VAL,Importance Value (300),Double

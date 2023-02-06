@@ -14,6 +14,28 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+```{r library, include=FALSE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+```
+--- 
+```{r import, include=FALSE}
+ES_AgePlot_df     <- read.csv("data/ES_AgePlot.csv")
+Py_Script_Tools_df <- read.csv("data/Py_Script_Tools.csv")
+```
+
+```{r table_functions, include=FALSE}
+params_table <- function(params_df, tool, caption) {
+  param_names <- c("Parameter", "Type", "Description", "Required")
+  tool_dd <- filter(params_df, tool == !!tool) %>%
+             select(parameter_name:required)
+  kable(tool_dd, col.names = param_names,
+        caption = caption)
+
+}
+```
+
 
 # Overview {-}
 

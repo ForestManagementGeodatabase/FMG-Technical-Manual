@@ -37,5 +37,9 @@ Funding for development and maintenance of the FMG-toolbox has been provided by 
 * [Michael Dougherty](mailto:Michael.P.Dougherty@usace.army.mil), Geographer, Rock Island District, U.S. Army Corps of Engineers <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0002-1465-5927" href="https://orcid.org/0000-0002-1465-5927" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0002-1465-5927</a></div>
 * [Lauren McNeal](mailto:Lauren.J.McNeal@usace.army.mil), Forester, Rock Island District, U.S. Army Corps of Engineers
 
+## Read the Report
+
+The report can be found here: [FMG Technical Manual](https://forestmanagementgeodatabase.github.io/FMG-Technical-Manual/)
+
 ## Bug Reports
 If you find any bugs while using the FMG toolbox toolbox, please open an [issue](https://github.com/ForestManagementGeodatabase/FMG-toolbox/issues) in this repository. 
