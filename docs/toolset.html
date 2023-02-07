@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual</title>
 <meta name="author" content="US Army Corps of Engineers">
-<meta name="description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
+<meta name="description" content="5.1 Platforms The FMG toolbox uses ESRI and open source software to construct a custom toolbox for analysis and reporting of forestry inventory data. ArcGIS Desktop -Desktop (ArcMap and ArcGIS...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
+<meta property="og:description" content="5.1 Platforms The FMG toolbox uses ESRI and open source software to construct a custom toolbox for analysis and reporting of forestry inventory data. ArcGIS Desktop -Desktop (ArcMap and ArcGIS...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Toolset | Forestry Management Geodatabase Technical Manual">
-<meta name="twitter:description" content="5.1 Python (Analysis) Tool Name Description FMG Health Summary Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional) FMG...">
+<meta name="twitter:description" content="5.1 Platforms The FMG toolbox uses ESRI and open source software to construct a custom toolbox for analysis and reporting of forestry inventory data. ArcGIS Desktop -Desktop (ArcMap and ArcGIS...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,62 +61,327 @@
 <h1>
 <span class="header-section-number">5</span> Toolset<a class="anchor" aria-label="anchor" href="#toolset"><i class="fas fa-link"></i></a>
 </h1>
-<div id="python-analysis" class="section level2" number="5.1">
+<div id="platforms" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">5.1</span> Python (Analysis)<a class="anchor" aria-label="anchor" href="#python-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Platforms<a class="anchor" aria-label="anchor" href="#platforms"><i class="fas fa-link"></i></a>
 </h2>
+<p>The FMG toolbox uses ESRI and open source software to construct a custom toolbox for analysis and reporting of forestry inventory data.</p>
+<ul>
+<li>ArcGIS Desktop -Desktop (ArcMap and ArcGIS Pro) are industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS desktop applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization.</li>
+<li>ArcGIS toolbox - ArcGIS Desktop allows for the creation of sophisticated custom geospatial toolboxes to be built that combine ESRI’s COTS geoprocessing tools with user created tools from several platforms (e.g., Python, R).</li>
+<li>Python - ArcGIS provides a robust scripting interface to its GIS tools using the Python language. Custom geospatial toolboxes can combine ESRI’s COTS geoprocessing tools with tools available within the diverse, mature, and ever-growing Python data science ecosystem.</li>
+<li>R - ESRI’s ArcGIS R-bridge product allows R tools to be called within the ArcGIS toolbox interface. This allows ArcGIS tools to take advantage of the mature ecosystem of R data science, statistical, visualization, and report generation packages</li>
+</ul>
+</div>
+<div id="arcgis-toolbox" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> ArcGIS Toolbox<a class="anchor" aria-label="anchor" href="#arcgis-toolbox"><i class="fas fa-link"></i></a>
+</h2>
+<p>The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIs toolbox is developed using custom Python scripts.</p>
+<div id="qa-tools" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> QA Tools<a class="anchor" aria-label="anchor" href="#qa-tools"><i class="fas fa-link"></i></a>
+</h3>
+<div id="prep-qa-workspace" class="section level4" number="5.2.1.1">
+<h4>
+<span class="header-section-number">5.2.1.1</span> <code>01-Prep QA Workspace</code><a class="anchor" aria-label="anchor" href="#prep-qa-workspace"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Purpose</strong>- This tool creates a QA geodatabase for each input (Fixed, Prism, Age,Plot)</p>
+<p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/01_prep_qa_workspace.py">Prep QA Workspace Tool</a></p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="16%">
-<col width="83%">
+<col width="20%">
+<col width="54%">
+<col width="15%">
+<col width="9%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">Tool Name</th>
+<th align="left">Parameter</th>
 <th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Required</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">FMG Health Summary</td>
-<td align="left">Generates the trees per acre for each health class in a selection (summarization by species, mast type, and size class optional)</td>
+<td align="left">Destination Folder</td>
+<td align="left">Folder in which output .gdb will be created</td>
+<td align="left">Folder</td>
+<td align="left">required</td>
 </tr>
 <tr class="even">
-<td align="left">FMG Note Appender</td>
-<td align="left">Aggregates the notes of ES_AgePlot, ES_FixedPlot, &amp; ES_PrismPlot into one table</td>
+<td align="left">Fixed Plots</td>
+<td align="left">Fixed plots (shapefile or feature class)</td>
+<td align="left">Feature Class</td>
+<td align="left">required</td>
 </tr>
 <tr class="odd">
-<td align="left">FMG Plot Summary (Age &amp; Fixed)</td>
-<td align="left">Generates mean overstory closure, mean overstory height, mean understory cover, mean understory height, &amp; mean tree age</td>
+<td align="left">Prism Plots</td>
+<td align="left">Prism plots (shapefile or feature class)</td>
+<td align="left">Feature Class</td>
+<td align="left">required</td>
 </tr>
 <tr class="even">
-<td align="left">FMG Stand Species Summary</td>
-<td align="left">Generates average basal area, average trees per acre, count, plot frequency, &amp; quadratic mean DBH for each species</td>
+<td align="left">Age Plots</td>
+<td align="left">Age plots (shapefile or feature class)</td>
+<td align="left">Feature Class</td>
+<td align="left">required</td>
 </tr>
 <tr class="odd">
-<td align="left">FMG Species Importance Values</td>
-<td align="left">Generates the importance values of species on a 300-scale (relative TPA, relative BA, &amp; relative frequency)</td>
-</tr>
-<tr class="even">
-<td align="left">FMG Spp Importance Values (Plot)</td>
-<td align="left">Generates the importance values of species on a 200-scale (relative TPA &amp; relative BA)</td>
-</tr>
-<tr class="odd">
-<td align="left">FMG Stand Summary</td>
-<td align="left">Generates average basal area, average trees per acre (total, size classes, mast types), tree count, plot count, note count, species richness &amp; quadratic mean DBH</td>
-</tr>
-<tr class="even">
-<td align="left">FMG Stand ID Assign</td>
-<td align="left">Updates the SID field when stand lines are moved</td>
-</tr>
-<tr class="odd">
-<td align="left">FMG Forest Community</td>
-<td align="left">Analyzes ES_PrismPlot to generate plot and stand level forest community types</td>
+<td align="left">Plot Centers</td>
+<td align="left">Plot center locations (shapefile or feature class)</td>
+<td align="left">Feature Class</td>
+<td align="left">required</td>
 </tr>
 </tbody>
 </table></div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/QA_Tool1.png" alt="01 - Prep QA Workspace Tool dialogue." width="335"><p class="caption">
+Figure 5.1: 01 - Prep QA Workspace Tool dialogue.
+</p>
 </div>
-<div id="r-package-reporting" class="section level2" number="5.2">
+</div>
+<div id="check-required-fields-plot-center" class="section level4" number="5.2.1.2">
+<h4>
+<span class="header-section-number">5.2.1.2</span> <code>02-Check Required Fields [Plot Center]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-plot-center"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Purpose-</strong> Checks the plot center input for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
+<p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/02_check_required_fields_center.py">Check Required Fields (Plot Center)</a></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="13%">
+<col width="53%">
+<col width="25%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Plot Centers</td>
+<td align="left">Plot center locations (feature class)</td>
+<td align="left">Feature Class or Feature Layer</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">Plot ID Field</td>
+<td align="left">Name of plot ID field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Plot Type Field</td>
+<td align="left">Name of field containing site type flags (age, walkthrough, etc)</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table></div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/QA_Tool2.png" alt="02 - Check Required Fields [Plot Center] Tool Dialogue." width="339"><p class="caption">
+Figure 5.2: 02 - Check Required Fields [Plot Center] Tool Dialogue.
+</p>
+</div>
+</div>
+<div id="check-required-fields-prism" class="section level4" number="5.2.1.3">
+<h4>
+<span class="header-section-number">5.2.1.3</span> <code>03-Check Required Fields [Prism]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-prism"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Purpose-</strong> Checks prism plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
+<p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/03_check_required_fields_prism.py">Check Required Fields (Prism)</a></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="16%">
+<col width="33%">
+<col width="38%">
+<col width="11%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Required</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">fc_prism</td>
+<td align="left">Prism plot feature class</td>
+<td align="left">Feature Class or Feature Layer</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">plot_name</td>
+<td align="left">Name of plot ID field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">species_name</td>
+<td align="left">Name of tree species field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">dia_name</td>
+<td align="left">Dialog Reference</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">class_name</td>
+<td align="left">Name of canopy class field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">health_name</td>
+<td align="left">Name of tree health field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">misc_name</td>
+<td align="left">Name of notes field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">crew_name</td>
+<td align="left">Name of crew field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">date_name</td>
+<td align="left">Name of date field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+</tbody>
+</table></div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/QA_Tool3.png" alt="03 - Check Required Fields [Prism] Tool Dialogue." width="341"><p class="caption">
+Figure 5.3: 03 - Check Required Fields [Prism] Tool Dialogue.
+</p>
+</div>
+</div>
+<div id="check-required-fields-fixed" class="section level4" number="5.2.1.4">
+<h4>
+<span class="header-section-number">5.2.1.4</span> <code>04-Check Required Fields [Fixed]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-fixed"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Purpose-</strong> Checks fixed plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
+<p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/04_check_required_fields_fixed.py">Check Required Fields (Fixed)</a></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="51%">
+<col width="23%">
+<col width="6%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Required</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fixed Plots</td>
+<td align="left">Fixed plot feature class</td>
+<td align="left">Feature Class or Feature Layer</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">Plot ID Field</td>
+<td align="left">Name of plot ID field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Canopy Closure Field</td>
+<td align="left">Name of overstory closure field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">Overstory Height Field</td>
+<td align="left">Name of overstory height field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Understory Height Field</td>
+<td align="left">Name of understory height range field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">Understory Cover Field</td>
+<td align="left">Name of understory cover field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Understory Species Field</td>
+<td align="left">Name of understory species field (if multiple, choose the first one)</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left">Ground Species Field</td>
+<td align="left">Name of ground species field (if multiple, choose the first one)</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Misc Field</td>
+<td align="left">Name of miscellanious notes field</td>
+<td align="left">Field</td>
+<td align="left">optional</td>
+</tr>
+<tr class="even">
+<td align="left">Crew Field</td>
+<td align="left">Name of crew field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="odd">
+<td align="left">Date Field</td>
+<td align="left">Name of date field</td>
+<td align="left">Field</td>
+<td align="left">required</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table></div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/QA_Tool4.png" alt="04 - Check Required Fields [Fixed] Tool Dialogue." width="336"><p class="caption">
+Figure 5.4: 04 - Check Required Fields [Fixed] Tool Dialogue.
+</p>
+</div>
+</div>
+</div>
+<div id="summary-tools-scripts-hello" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Summary Tools?? Scripts??? Hello?<a class="anchor" aria-label="anchor" href="#summary-tools-scripts-hello"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="reporting-tools" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.2</span> R Package (Reporting)<a class="anchor" aria-label="anchor" href="#r-package-reporting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Reporting Tools<a class="anchor" aria-label="anchor" href="#reporting-tools"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -128,8 +393,14 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#toolset"><span class="header-section-number">5</span> Toolset</a></li>
-<li><a class="nav-link" href="#python-analysis"><span class="header-section-number">5.1</span> Python (Analysis)</a></li>
-<li><a class="nav-link" href="#r-package-reporting"><span class="header-section-number">5.2</span> R Package (Reporting)</a></li>
+<li><a class="nav-link" href="#platforms"><span class="header-section-number">5.1</span> Platforms</a></li>
+<li>
+<a class="nav-link" href="#arcgis-toolbox"><span class="header-section-number">5.2</span> ArcGIS Toolbox</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#qa-tools"><span class="header-section-number">5.2.1</span> QA Tools</a></li>
+<li><a class="nav-link" href="#summary-tools-scripts-hello"><span class="header-section-number">5.2.2</span> Summary Tools?? Scripts??? Hello?</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#reporting-tools"><span class="header-section-number">5.3</span> Reporting Tools</a></li>
 </ul>
 
       <div class="book-extra">

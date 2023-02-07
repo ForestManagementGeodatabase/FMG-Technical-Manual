@@ -1,4 +1,0 @@
-﻿Field Name,Field Description,Field Type
-OBJECTID,ArcGIS Database Key (auto-generated),Object ID
-COM_TYPE,Forest community type,Text
-CODE,Community type code,Text

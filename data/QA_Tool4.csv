@@ -1,0 +1,13 @@
+﻿Parameter,Description,Type,Required
+Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+Plot ID Field,Name of plot ID field,Field,required
+Canopy Closure Field,Name of overstory closure field,Field,required
+Overstory Height Field,Name of overstory height field,Field,required
+Understory Height Field,Name of understory height range field,Field,required
+Understory Cover Field,Name of understory cover field,Field,required
+Understory Species Field,"Name of understory species field (if multiple, choose the first one)",Field,required
+Ground Species Field,"Name of ground species field (if multiple, choose the first one)",Field,required
+Misc Field,Name of miscellanious notes field,Field,optional
+Crew Field,Name of crew field,Field,required
+Date Field,Name of date field,Field,required
+,,,

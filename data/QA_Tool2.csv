@@ -1,0 +1,4 @@
+﻿Parameter,Type,Description,Required
+Plot Centers,Plot center locations (feature class),Feature Class or Feature Layer,required
+Plot ID Field,Name of plot ID field,Field,required
+Plot Type Field,"Name of field containing site type flags (age, walkthrough, etc)",Field,required

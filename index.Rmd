@@ -20,10 +20,6 @@ library(kableExtra)
 library(dplyr)
 ```
 --- 
-```{r import, include=FALSE}
-ES_AgePlot_df     <- read.csv("data/ES_AgePlot.csv")
-Py_Script_Tools_df <- read.csv("data/Py_Script_Tools.csv")
-```
 
 ```{r table_functions, include=FALSE}
 params_table <- function(params_df, tool, caption) {

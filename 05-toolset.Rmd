@@ -1,18 +1,92 @@
 # Toolset
 
-## Python (Analysis)
+## Platforms
 
-```{r py tools table,echo=FALSE}
+The FMG toolbox uses ESRI and open source software to construct a custom toolbox for analysis and reporting of forestry inventory data.
+
+-   ArcGIS Desktop -Desktop (ArcMap and ArcGIS Pro) are industry standard enterprise desktop GIS products for conducting geospatial analysis. The ArcGIS desktop applications contain an enormous number of commercial-off-the shelf (COTS) geospatial tools for performing sophisticated analyses and visualization.
+-   ArcGIS toolbox - ArcGIS Desktop allows for the creation of sophisticated custom geospatial toolboxes to be built that combine ESRI's COTS geoprocessing tools with user created tools from several platforms (e.g., Python, R).
+-   Python - ArcGIS provides a robust scripting interface to its GIS tools using the Python language. Custom geospatial toolboxes can combine ESRI's COTS geoprocessing tools with tools available within the diverse, mature, and ever-growing Python data science ecosystem.
+-   R - ESRI's ArcGIS R-bridge product allows R tools to be called within the ArcGIS toolbox interface. This allows ArcGIS tools to take advantage of the mature ecosystem of R data science, statistical, visualization, and report generation packages
+
+## ArcGIS Toolbox
+
+The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIs toolbox is developed using custom Python scripts.
+
+### QA Tools
+
+#### `01-Prep QA Workspace`
+
+**Purpose**- This tool creates a QA geodatabase for each input (Fixed, Prism, Age,Plot)
+
+**Code-** This ArcGIS tool is built from the Python Script [Prep QA Workspace Tool](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/01_prep_qa_workspace.py)
+
+```{r py Qa1, echo=FALSE}
 
 
 library(knitr)
-Py_Script_Tools_df <- read.csv("data/Py_Script_Tools.csv", check.names=FALSE)
-kable(Py_Script_Tools_df)
+QA_Tool1_df <- read.csv("data/QA_Tool1.csv", check.names=FALSE)
+kable(QA_Tool1_df)
+
 ```
 
+```{r echo=FALSE, fig.cap= "01 - Prep QA Workspace Tool dialogue."}
+knitr::include_graphics("images/QA_tool1.png")
+```
+
+#### `02-Check Required Fields [Plot Center]`
+
+**Purpose-** Checks the plot center input for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Plot Center)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/02_check_required_fields_center.py)
+
+```{r py QA2, echo=FALSE}
 
 
+library(knitr)
+QA_Tool2_df <- read.csv("data/QA_Tool2.csv", check.names=FALSE)
+kable(QA_Tool2_df)
 
+```
 
+```{r echo=FALSE, fig.cap= "02 - Check Required Fields [Plot Center] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool2.png")
+```
 
-## R Package (Reporting)
+#### `03-Check Required Fields [Prism]`
+
+**Purpose-** Checks prism plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Prism)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/03_check_required_fields_prism.py)
+
+```{r py QA3, echo=FALSE}
+library(knitr)
+QA_Tool3_df <- read.csv("data/QA_Tool3.csv", check.names=FALSE)
+kable(QA_Tool3_df)
+
+```
+
+```{r echo=FALSE, fig.cap= "03 - Check Required Fields [Prism] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool3.png")
+```
+
+#### `04-Check Required Fields [Fixed]`
+
+**Purpose-** Checks fixed plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Fixed)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/04_check_required_fields_fixed.py)
+
+```{r py QA4, echo=FALSE}
+library(knitr)
+QA_Tool4_df <- read.csv("data/QA_Tool4.csv", check.names=FALSE)
+kable(QA_Tool4_df)
+
+```
+
+```{r echo=FALSE, fig.cap= "04 - Check Required Fields [Fixed] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool4.png")
+```
+
+### Summary Tools?? Scripts??? Hello?
+
+## Reporting Tools
