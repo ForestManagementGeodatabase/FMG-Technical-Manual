@@ -1,7 +1,7 @@
 --- 
 title: "Forestry Management Geodatabase Technical Manual"
 author: "US Army Corps of Engineers"
-date: "2023-02-06"
+date: "2023-02-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
