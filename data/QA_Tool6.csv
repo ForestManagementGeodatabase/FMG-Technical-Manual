@@ -1,9 +1,0 @@
-﻿Parameter,Description,Type,Required
-fc_center,Primary set of plot locations,Feature Class or Feature Layer,required
-center_plot_id_field,Name of plot ID field,Field,required
-fc_prism,Prism plot feature class,Feature Class or Feature Layer,required
-prism_plot_id_field,Prism plot ID field,Field,required
-fc_fixed,Fixed plot feature class,Feature Class or Feature Layer,required
-fixed_plot_id_field,Name of plot ID field,Field,required
-fc_age,Age plot feature class,Feature Class or Feature Layer,required
-age_plot_id_field,Name of plot ID field,Field,required

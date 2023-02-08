@@ -1,6 +1,0 @@
-﻿Parameter,Description,Type,Required
-Plot Centers,Primary set of plot locations,Feature Class or Feature Layer,required
-Plot Center ID Field,Name of plot ID field,Field,required
-Flag Field,Name of field which flags plots for age tree collection,Field,required
-Age Plots,Age plot feature class,Feature Class or Feature Layer,required
-Age Plot ID Field,Name of plot ID field,Field,required

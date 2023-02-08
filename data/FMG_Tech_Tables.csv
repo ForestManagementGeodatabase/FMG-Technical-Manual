@@ -1,6 +1,0 @@
-﻿Parameter,Type,Description,Required
-Destination Folder,Folder,Folder in which output .gdb will be created,required
-Fixed Plots,Feature Class,Fixed plots (shapefile or feature class),required
-Prism Plots,Feature Class ,Prism plots (shapefile or feature class),required
-Age Plots,Feature Class,Age plots (shapefile or feature class),required
-Plot Centers,Feature Class,Plot center locations (shapefile or feature class),required

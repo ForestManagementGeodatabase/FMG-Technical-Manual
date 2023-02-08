@@ -1,5 +1,0 @@
-﻿Parameter,Description,Type,Required
-Plot Centers,Primary set of plot locations,Feature Class or Feature Layer,required
-Plot Center ID Field,Name of plot ID field,Field,required
-Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
-Fixed Plot ID Field,Name of plot ID field,Field,required

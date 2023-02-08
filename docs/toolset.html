@@ -77,16 +77,24 @@
 <h2>
 <span class="header-section-number">5.2</span> ArcGIS Toolbox<a class="anchor" aria-label="anchor" href="#arcgis-toolbox"><i class="fas fa-link"></i></a>
 </h2>
-<p>The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIs toolbox is developed using custom Python scripts.</p>
+<p>The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIS toolbox is developed using custom Python scripts.</p>
 <div id="qa-tools" class="section level3" number="5.2.1">
 <h3>
 <span class="header-section-number">5.2.1</span> QA Tools<a class="anchor" aria-label="anchor" href="#qa-tools"><i class="fas fa-link"></i></a>
 </h3>
-<div id="prep-qa-workspace" class="section level4" number="5.2.1.1">
+<div id="clean-inputs" class="section level4" number="5.2.1.1">
 <h4>
-<span class="header-section-number">5.2.1.1</span> <code>01-Prep QA Workspace</code><a class="anchor" aria-label="anchor" href="#prep-qa-workspace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.1</span> <code>00-Clean Inputs</code><a class="anchor" aria-label="anchor" href="#clean-inputs"><i class="fas fa-link"></i></a>
 </h4>
-<p><strong>Purpose</strong>- This tool creates a QA geodatabase for each input (Fixed, Prism, Age,Plot)</p>
+<p><strong>Purpose</strong>- FMG QA Tools Function Library. This script contains the function library referenced throughout
+the ArcGIS toolbox QA tools.</p>
+<p><strong>Code-</strong> This function library is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/clean_inputs.py">Clean Inputs</a></p>
+</div>
+<div id="prep-qa-workspace" class="section level4" number="5.2.1.2">
+<h4>
+<span class="header-section-number">5.2.1.2</span> <code>01-Prep QA Workspace</code><a class="anchor" aria-label="anchor" href="#prep-qa-workspace"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Purpose</strong>- This tool creates a QA geodatabase for each input (Fixed, Prism, Age, Plot)</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/01_prep_qa_workspace.py">Prep QA Workspace Tool</a></p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -186,9 +194,9 @@ Figure 5.1: 01 - Prep QA Workspace Tool dialogue.
 </p>
 </div>
 </div>
-<div id="check-required-fields-plot-center" class="section level4" number="5.2.1.2">
+<div id="check-required-fields-plot-center" class="section level4" number="5.2.1.3">
 <h4>
-<span class="header-section-number">5.2.1.2</span> <code>02-Check Required Fields [Plot Center]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-plot-center"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.3</span> <code>02-Check Required Fields [Plot Center]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-plot-center"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks the plot center input for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/02_check_required_fields_center.py">Check Required Fields (Plot Center)</a></p>
@@ -262,9 +270,9 @@ Figure 5.2: 02 - Check Required Fields [Plot Center] Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-required-fields-prism" class="section level4" number="5.2.1.3">
+<div id="check-required-fields-prism" class="section level4" number="5.2.1.4">
 <h4>
-<span class="header-section-number">5.2.1.3</span> <code>03-Check Required Fields [Prism]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-prism"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.4</span> <code>03-Check Required Fields [Prism]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-prism"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks prism plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/03_check_required_fields_prism.py">Check Required Fields (Prism)</a></p>
@@ -422,9 +430,9 @@ Figure 5.3: 03 - Check Required Fields [Prism] Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-required-fields-fixed" class="section level4" number="5.2.1.4">
+<div id="check-required-fields-fixed" class="section level4" number="5.2.1.5">
 <h4>
-<span class="header-section-number">5.2.1.4</span> <code>04-Check Required Fields [Fixed]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-fixed"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.5</span> <code>04-Check Required Fields [Fixed]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-fixed"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks fixed plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/04_check_required_fields_fixed.py">Check Required Fields (Fixed)</a></p>
@@ -610,9 +618,9 @@ Figure 5.4: 04 - Check Required Fields [Fixed] Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-required-fields-age" class="section level4" number="5.2.1.5">
+<div id="check-required-fields-age" class="section level4" number="5.2.1.6">
 <h4>
-<span class="header-section-number">5.2.1.5</span> <code>05-Check Required Fields [Age]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-age"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.6</span> <code>05-Check Required Fields [Age]</code><a class="anchor" aria-label="anchor" href="#check-required-fields-age"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks age plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/05_check_required_fields_age.py">Check Required Fields (Age)</a></p>
@@ -784,9 +792,9 @@ Figure 5.5: 05 - Check Required Fields [Age] Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-plot-ids" class="section level4" number="5.2.1.6">
+<div id="check-plot-ids" class="section level4" number="5.2.1.7">
 <h4>
-<span class="header-section-number">5.2.1.6</span> <code>06-Check Plot IDs</code><a class="anchor" aria-label="anchor" href="#check-plot-ids"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.7</span> <code>06-Check Plot IDs</code><a class="anchor" aria-label="anchor" href="#check-plot-ids"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Check the validity of fixed/age/prism plot IDs against the IDs of the primary set of plot locations.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/06_check_plot_ids.py">Check Plot IDs</a></p>
@@ -930,9 +938,9 @@ Figure 5.6: 06 - Check Plot IDs Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-fixed-offsets" class="section level4" number="5.2.1.7">
+<div id="check-fixed-offsets" class="section level4" number="5.2.1.8">
 <h4>
-<span class="header-section-number">5.2.1.7</span> <code>07-Check Fixed Offsets</code><a class="anchor" aria-label="anchor" href="#check-fixed-offsets"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.8</span> <code>07-Check Fixed Offsets</code><a class="anchor" aria-label="anchor" href="#check-fixed-offsets"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks fixed plot IDs against the ID of the nearest plot center. If the nearest plot center has the same ID as the fixed plot ID, the fixed plot is considered to have the correct ID. If the nearest plot center has a different ID than the fixed plot, the fixed plot will be flagged and the ID should be checked manually.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/07_check_fixed_offsets.py">Check Fixed Offsets</a></p>
@@ -1020,9 +1028,9 @@ Figure 5.7: 07 - Check Fixed Offsets Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="verify-age-plots" class="section level4" number="5.2.1.8">
+<div id="verify-age-plots" class="section level4" number="5.2.1.9">
 <h4>
-<span class="header-section-number">5.2.1.8</span> <code>08-Verify Age Plots</code><a class="anchor" aria-label="anchor" href="#verify-age-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.9</span> <code>08-Verify Age Plots</code><a class="anchor" aria-label="anchor" href="#verify-age-plots"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks prescribed age plots against collected age plots. Returns the prescribed age plots with a flag field indicating if an age plot was collected.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/08_verify_age_plots.py">Verify Age Plots</a></p>
@@ -1124,9 +1132,9 @@ Figure 5.8: 08 - Verify Age Plots Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="check-prismfixed-match" class="section level4" number="5.2.1.9">
+<div id="check-prismfixed-match" class="section level4" number="5.2.1.10">
 <h4>
-<span class="header-section-number">5.2.1.9</span> <code>09-Check Prism/Fixed Match</code><a class="anchor" aria-label="anchor" href="#check-prismfixed-match"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.10</span> <code>09-Check Prism/Fixed Match</code><a class="anchor" aria-label="anchor" href="#check-prismfixed-match"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks to make sure there is a prism plot for every fixed plot and that there is a fixed plot for each prism plot. This is accomplished by comparing unique sets of plot IDs present for each feature class and populating fields indicating if this relationship holds true. Also checks which fixed plot is closest to each prism plot. If the closest fixed plot does not have the same plot ID as the prism plot then the prism plot is flagged for review.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/09_check_prism_fixed_match.py">Check Prism/Fixed Match</a></p>
@@ -1214,9 +1222,9 @@ Figure 5.9: 09 - Check Prism/Fixed Match Tool Dialogue.
 </p>
 </div>
 </div>
-<div id="remove-duplicates" class="section level4" number="5.2.1.10">
+<div id="remove-duplicates" class="section level4" number="5.2.1.11">
 <h4>
-<span class="header-section-number">5.2.1.10</span> <code>10-Remove Duplicates</code><a class="anchor" aria-label="anchor" href="#remove-duplicates"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.11</span> <code>10-Remove Duplicates</code><a class="anchor" aria-label="anchor" href="#remove-duplicates"><i class="fas fa-link"></i></a>
 </h4>
 <p><strong>Purpose-</strong> Checks for and removes duplicate geometry from prism, fixed, and age plots. Fixed plots are checked for duplicate plot IDs in addition to duplicate geometry.</p>
 <p><strong>Code-</strong> This ArcGIS tool is built from the Python Script <a href="https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/10_remove_duplicates.py">Remove Duplicates</a></p>

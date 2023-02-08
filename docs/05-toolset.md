@@ -19,13 +19,21 @@ The FMG toolbox uses ESRI and open source software to construct a custom toolbox
 
 ## ArcGIS Toolbox
 
-The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIs toolbox is developed using custom Python scripts.
+The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIS toolbox is developed using custom Python scripts.
 
 ### QA Tools
 
+#### `00-Clean Inputs`
+**Purpose**- FMG QA Tools Function Library. This script contains the function library referenced throughout
+the ArcGIS toolbox QA tools.
+
+
+**Code-** This function library is built from the Python Script [Clean Inputs](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/clean_inputs.py)
+
+
 #### `01-Prep QA Workspace`
 
-**Purpose**- This tool creates a QA geodatabase for each input (Fixed, Prism, Age,Plot)
+**Purpose**- This tool creates a QA geodatabase for each input (Fixed, Prism, Age, Plot)
 
 **Code-** This ArcGIS tool is built from the Python Script [Prep QA Workspace Tool](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/01_prep_qa_workspace.py)
 
