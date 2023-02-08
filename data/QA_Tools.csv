@@ -1,0 +1,64 @@
+﻿tool,parameter,description,type,required
+QA1,Destination Folder,Folder in which output .gdb will be created,Folder,required
+QA1,Fixed Plots,Fixed plots (shapefile or feature class),Feature Class or Feature Layer,required
+QA1,Prism Plots,Prism plots (shapefile or feature class),Feature Class or Feature Layer,required
+QA1,Age Plots,Age plots (shapefile or feature class),Feature Class or Feature Layer,required
+QA1,Plot Centers,Plot center locations (shapefile or feature class),Feature Class or Feature Layer,required
+QA2,Plot Centers,Plot center locations (feature class),Feature Class or Feature Layer,required
+QA2,Plot ID Field,Name of plot ID field,Field,required
+QA2,Plot Type Field,"Name of field containing site type flags (age, walkthrough, etc)",Field,required
+QA3,Prism Plots,Prism plot feature class,Feature Class or Feature Layer,required
+QA3,Plot ID Field,Name of plot ID field,Field,required
+QA3,Species Field,Name of tree species field,Field,required
+QA3,DBH Field,Dialog Reference,Field,required
+QA3,Canopy Class Field,Name of canopy class field,Field,required
+QA3,Health Field,Name of tree health field,Field,required
+QA3,Misc Field,Name of miscellanious notes field,Field,optional
+QA3,Crew Field,Name of crew field,Field,required
+QA3,Date Field,Name of date field,Field,required
+QA4,Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+QA4,Plot ID Field,Name of plot ID field,Field,required
+QA4,Canopy Closure Field,Name of overstory closure field,Field,required
+QA4,Overstory Height Field,Name of overstory height field,Field,required
+QA4,Understory Height Field,Name of understory height range field,Field,required
+QA4,Understory Cover Field,Name of understory cover field,Field,required
+QA4,Understory Species Field,"Name of understory species field (if multiple, choose the first one)",Field,required
+QA4,Ground Species Field,"Name of ground species field (if multiple, choose the first one)",Field,required
+QA4,Misc Field,Name of miscellanious notes field,Field,optional
+QA4,Crew Field,Name of crew field,Field,required
+QA4,Date Field,Name of date field,Field,required
+QA5,Age Plots,Age plot feature class,Feature Class or Feature Layer,required
+QA5,Plot ID Field,Name of plot ID field,Field,required
+QA5,Species Field,Name of tree species field,Field,required
+QA5,DBH Field,Name of tree diameter field,Field,required
+QA5,Height Field,Name of tree height field,Field,required
+QA5,Year of Origin Field,Name of tree year of origin field,Field,required
+QA5,Growth Rate Field,Name of tree growth rate field,Field,required
+QA5,Misc Field,Name of miscellanious notes field,Field,optional
+QA5,Crew Field,Name of crew field,Field,required
+QA5,Date Field,Name of date field,Field,required
+QA6,Plot Centers,Primary set of plot locations,Feature Class or Feature Layer,required
+QA6,Plot Center ID Field,Name of plot ID field,Field,required
+QA6,Prism Plots,Prism plot feature class,Feature Class or Feature Layer,required
+QA6,Prism Plot ID Field,Prism plot ID field,Field,required
+QA6,Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+QA6,Fixed Plot ID Field,Name of plot ID field,Field,required
+QA6,Age Plots,Age plot feature class,Feature Class or Feature Layer,required
+QA6,Age Plot ID Field,Name of plot ID field,Field,required
+QA7,Plot Centers,Primary set of plot locations,Feature Class or Feature Layer,required
+QA7,Plot Center ID Field,Name of plot ID field,Field,required
+QA7,Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+QA7,Fixed Plot ID Field,Name of plot ID field,Field,required
+QA8,Plot Centers,Primary set of plot locations,Feature Class or Feature Layer,required
+QA8,Plot Center ID Field,Name of plot ID field,Field,required
+QA8,Flag Field,Name of field which flags plots for age tree collection,Field,required
+QA8,Age Plots,Age plot feature class,Feature Class or Feature Layer,required
+QA8,Age Plot ID Field,Name of plot ID field,Field,required
+QA9,Prism Plots,Prism plot feature class,Feature Class or Feature Layer,required
+QA9,Plot ID ,Name of plot ID field,Field,required
+QA9,Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+QA9,Plot ID,Name of plot ID field,Field,required
+QA10,Prism Plots,Prism plot feature class,Feature Class or Feature Layer,required
+QA10,Fixed Plots,Fixed plot feature class,Feature Class or Feature Layer,required
+QA10,Fixed Plot ID Field,Name of plot ID field,Field,required
+QA10,Age Plots,Age plot feature class,Feature Class or Feature Layer,required

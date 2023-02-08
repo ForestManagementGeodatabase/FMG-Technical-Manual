@@ -20,12 +20,16 @@ library(kableExtra)
 library(dplyr)
 ```
 --- 
+```{r import, include=FALSE}
+QA_Tools_df <- read.csv("data/QA_Tools.csv")
+```
+
 
 ```{r table_functions, include=FALSE}
-params_table <- function(params_df, tool, caption) {
-  param_names <- c("Parameter", "Type", "Description", "Required")
-  tool_dd <- filter(params_df, tool == !!tool) %>%
-             select(parameter_name:required)
+params_table <- function(QA_Tools_df, tool, caption) {
+  param_names <- c("Parameter", "Description","Type", "Required")
+  tool_dd <- filter(QA_Tools_df, tool == !!tool) %>%
+             select(parameter:required)
   kable(tool_dd, col.names = param_names,
         caption = caption)
 
