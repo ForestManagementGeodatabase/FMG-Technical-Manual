@@ -21,11 +21,6 @@ fig:unnamed-chunk-20
 intro
 data-stored-in-fmg
 tools-reference
-feature-class-reference
-metrics-reference
-footnotes
-toolset
-platforms
 arcgis-toolbox
 qa-tools
 clean-inputs
@@ -41,4 +36,9 @@ check-prismfixed-match
 remove-duplicates
 summary-tools
 reporting-tools
+feature-class-reference
+metrics-reference
+footnotes
+toolset
+platforms
 field-data-collection

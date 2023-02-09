@@ -1,3 +1,198 @@
 # Tools Reference
+```{r library, include=FALSE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+```
 
+```{r data, include=FALSE}
+QA_Tools_df <- read.csv("data/QA_Tools.csv")
+```
+
+
+```{r table_functions, include=FALSE}
+params_table <- function(QA_Tools_df, tool, caption) {
+  param_names <- c("Parameter", "Description","Type", "Required")
+  tool_dd <- filter(QA_Tools_df, tool == !!tool) %>%
+             select(parameter:required)
+  kable(tool_dd, col.names = param_names,
+        caption = caption)
+
+}
+```
+
+
+## ArcGIS Toolbox
+
+The FMG toolbox contains two toolsets, the QA toolset and the Summary toolset. This ArcGIS toolbox is developed using custom Python scripts.
+
+### QA Tools
+
+#### `00-Clean Inputs`
+**Purpose**- FMG QA Tools Function Library. This script contains the function library referenced throughout
+the ArcGIS toolbox QA tools.
+
+
+**Code-** This function library is built from the Python Script [Clean Inputs](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/clean_inputs.py)
+
+
+#### `01-Prep QA Workspace`
+
+**Purpose**- This tool creates a QA geodatabase for each input (Fixed, Prism, Age, Plot)
+
+**Code-** This ArcGIS tool is built from the Python Script [Prep QA Workspace Tool](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/01_prep_qa_workspace.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA1","Prep QA Workspace Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "01 - Prep QA Workspace Tool dialogue."}
+knitr::include_graphics("images/QA_tool1.png")
+```
+
+#### `02-Check Required Fields [Plot Center]`
+
+**Purpose-** Checks the plot center input for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Plot Center)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/02_check_required_fields_center.py)
+
+```{r, echo=FALSE}
+
+params_table(QA_Tools_df, "QA2","Check Required Fields [Plot Center] Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "02 - Check Required Fields [Plot Center] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool2.png")
+```
+
+#### `03-Check Required Fields [Prism]`
+
+**Purpose-** Checks prism plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Prism)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/03_check_required_fields_prism.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA3","Check Required Fields [Prism] Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "03 - Check Required Fields [Prism] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool3.png")
+```
+
+#### `04-Check Required Fields [Fixed]`
+
+**Purpose-** Checks fixed plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Fixed)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/04_check_required_fields_fixed.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA4","Check Required Fields [Fixed] Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "04 - Check Required Fields [Fixed] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool4.png")
+```
+
+#### `05-Check Required Fields [Age]`
+
+**Purpose-** Checks age plots for presence of required fields and for missing values in those fields. This tool will rename provided fields as necessary to match the FMG schema.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Required Fields (Age)](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/05_check_required_fields_age.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA5","Check Required Fields [Age] Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "05 - Check Required Fields [Age] Tool Dialogue."}
+knitr::include_graphics("images/QA_tool5.png")
+```
+
+#### `06-Check Plot IDs`
+
+**Purpose-** Check the validity of fixed/age/prism plot IDs against the IDs of the primary set of plot locations.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Plot IDs](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/06_check_plot_ids.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA6","Check Plot IDs Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "06 - Check Plot IDs Tool Dialogue."}
+knitr::include_graphics("images/QA_tool6.png")
+```
+
+#### `07-Check Fixed Offsets`
+
+**Purpose-** Checks fixed plot IDs against the ID of the nearest plot center. If the nearest plot center has the same ID as the fixed plot ID, the fixed plot is considered to have the correct ID. If the nearest plot center has a different ID than the fixed plot, the fixed plot will be flagged and the ID should be checked manually.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Fixed Offsets](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/07_check_fixed_offsets.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA7", "Check Fixed Offsets Tool Parameters")
+
+```
+
+```{r echo=FALSE, fig.cap= "07 - Check Fixed Offsets Tool Dialogue."}
+knitr::include_graphics("images/QA_tool7.png")
+```
+
+#### `08-Verify Age Plots`
+
+**Purpose-** Checks prescribed age plots against collected age plots. Returns the prescribed age plots with a flag field indicating if an age plot was collected.
+
+**Code-** This ArcGIS tool is built from the Python Script [Verify Age Plots](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/08_verify_age_plots.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA8", "Verify Age Plots Tool Parameters")
+
+
+```
+
+```{r echo=FALSE, fig.cap= "08 - Verify Age Plots Tool Dialogue."}
+knitr::include_graphics("images/QA_tool8.png")
+```
+
+#### `09-Check Prism/Fixed Match`
+
+**Purpose-** Checks to make sure there is a prism plot for every fixed plot and that there is a fixed plot for each prism plot. This is accomplished by comparing unique sets of plot IDs present for each feature class and populating fields indicating if this relationship holds true.    Also checks which fixed plot is closest to each prism plot. If the closest fixed plot does not have the same plot ID as the prism plot then the prism plot is flagged for review.
+
+**Code-** This ArcGIS tool is built from the Python Script [Check Prism/Fixed Match](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/09_check_prism_fixed_match.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA9", "Check Prism/Fixed Match Tool Parameters")
+
+
+```
+
+```{r echo=FALSE, fig.cap= "09 - Check Prism/Fixed Match Tool Dialogue."}
+knitr::include_graphics("images/QA_tool9.png")
+```
+
+#### `10-Remove Duplicates`
+
+**Purpose-** Checks for and removes duplicate geometry from prism, fixed, and age plots. Fixed plots are checked for duplicate plot IDs in addition to duplicate geometry.
+
+**Code-** This ArcGIS tool is built from the Python Script [Remove Duplicates](https://github.com/ForestManagementGeodatabase/FMG-toolbox/blob/main/fmgpy/qa/10_remove_duplicates.py)
+
+```{r, echo=FALSE}
+params_table(QA_Tools_df, "QA10", "Remove Duplicates Tool Parameters")
+
+
+```
+
+```{r echo=FALSE, fig.cap= "10 - Remove Duplicates Tool Dialogue."}
+knitr::include_graphics("images/QA_tool10.png")
+```
+
+
+
+### Summary Tools
+
+## Reporting Tools
 
